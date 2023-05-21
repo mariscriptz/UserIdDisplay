@@ -1,0 +1,36 @@
+/**
+ * @name UserIdDisplay
+ * @version 1.0.0
+ * @description The person's User ID appears under their about me.
+ * @website https://www.youtube.com/channel/UCH3QVtH3i3AbeYyY1YNJFAQ
+ * @source https://example.com/plugin-source-code
+ * @updateUrl https://
+ * @author M a r i
+ */
+class UserIdDisplay {
+    start() {
+        const interval = setInterval(() => {
+            const members = document.querySelectorAll('.member-username-inner');
+            if (members.length) {
+                members.forEach((member) => {
+                    const userId = member.closest('.member').dataset.userId;
+                    const bioElement = member.closest('.member').querySelector('.member-activity-container .userActivity-2N9chJ');
+                    if (userId && !bioElement.querySelector('.user-id-display')) {
+                        const userIdElement = document.createElement('div');
+                        userIdElement.classList.add('user-id-display');
+                        userIdElement.innerText = `User ID: ${userId}`;
+                        bioElement.appendChild(userIdElement);
+                    }
+                });
+                clearInterval(interval);
+            }
+        }, 1000);
+    }
+
+    stop() {
+        const userIdElements = document.querySelectorAll('.user-id-display');
+        userIdElements.forEach((element) => {
+            element.remove();
+        });
+    }
+}
