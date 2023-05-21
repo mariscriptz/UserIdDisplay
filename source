@@ -3,8 +3,8 @@
  * @version 1.0.0
  * @description The person's User ID appears under their about me.
  * @website https://www.youtube.com/channel/UCH3QVtH3i3AbeYyY1YNJFAQ
- * @source https://example.com/plugin-source-code
- * @updateUrl https://
+ * @source https://raw.githubusercontent.com/mariscriptz/UserIdDisplay/main/source
+ * @updateUrl https://raw.githubusercontent.com/mariscriptz/UserIdDisplay/main/source
  * @author M a r i
  */
 class UserIdDisplay {
